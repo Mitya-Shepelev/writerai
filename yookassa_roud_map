@@ -1,0 +1,525 @@
+# writerai
+// Here is the list of actions performed to integrate the Yookassa payment gateway
+Link to yookassa api https://yookassa.ru/developers?lang=en
+
+Demo data for sandboxing and payment verification
+Shop ID:  986259
+Secret key:  test_O_Q3AglAxQI2_nCknRV3FtNwJMeMaUhmO2zAfI89MHM
+Http Notifications:   https://your_domain/payments/callback
+
+Test payment card: 5555555555554444  11/24 454
+
+
+________________________________________________________________________________________________________________
+
+// 1 Import yookassa into the ENV file to connect the gateway
+// File ./env
+
+YOOKASSA_ENABLED=
+YOOKASSA_SUBSCRIPTION_ENABLED=
+YOOKASSA_SHOP_ID=
+YOOKASSA_SECRET_KEY=
+YOOKASSA_HTTP_URI=
+_________________________________________________________________________________________________________
+// 1.2 Action add file /config/services.php
+
+'yookassa' => [
+'enable' => env('YOOKASSA_ENABLED'),
+'subscription' => env('YOOKASSA_SUBSCRIPTION_ENABLED'),
+'shop_id' => env('YOOKASSA_SHOP_ID'),
+'secret_key' => env('YOOKASSA_SECRET_KEY'),
+'http_uri' => env('YOOKASSA_HTTP_URI'),
+'class' => App\Services\YookassaService::class,
+],
+
+
+________________________________________________________________________________________________________________________________________________________
+
+// 1.3 Action add flle /resources/views/admin/finance/settings/index.blade.php
+
+<!-- Yookassa start  -->
+	        <div class="card border-0">
+					  <div class="card-header">
+						  <h3 class="card-title"><span class="text-info">Российский шлюз </span>Yookassa</h3>
+					     </div>
+					       <div class="card-body pb-6">
+	                  <div class="card overflow-hidden border-0 special-shadow">							
+							       <div class="card-body">
+								      <h6 class="fs-12 font-weight-bold mb-4"><img src="{{ URL::asset('/img/payments/yookassa-black.svg') }}" alt="Yookassa" class="gateway-logo gateway-small-logo">Yookassa Payment Gateway <span class="text-primary">({{ __('All Plans') }})</span></h6>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-12">
+										         <div class="form-group mb-4">
+											        <label class="custom-switch">
+												      <input type="checkbox" name="enable-yookassa" class="custom-switch-input" @if (config('services.yookassa.enable')  == 'on') checked @endif>
+												   <span class="custom-switch-indicator"></span>
+												<span class="custom-switch-description">Use Yookassa Prepaid</span>
+											</label>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-12">
+										<div class="form-group mb-4">
+											<label class="custom-switch">
+												<input type="checkbox" name="enable-yookassa-subscription" class="custom-switch-input" @if (config('services.yookassa.subscription')  == 'on') checked @endif>
+												<span class="custom-switch-indicator"></span>
+												<span class="custom-switch-description">Use Yookassa Subscription</span>
+											</label>
+										</div>
+									</div>
+								</div>
+              <div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-12">                
+                    <!-- ACCESS KEY -->
+                        <div class="input-box">
+                            <h6>Yookassa Shop ID</h6>
+                                <div class="form-group">    
+                                   <input type="text" class="form-control @error('yookassa_shop_id') is-danger @enderror" id="yookassa_shop_id" name="yookassa_shop_id" value="{{ config('services.yookassa.shop_id') }}" autocomplete="off">
+                                    </div>
+                                     @error('yookassa_shop_id')
+                                     <p class="text-danger">{{ $errors->first('yookassa_shop_id') }}</p>
+                                     @enderror
+                                    </div> <!-- END ACCESS KEY -->
+                                  </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="input-box">
+                                    <h6>Yookassa Secret Key</h6>
+                                        <div class="form-group">    
+                                         <input type="text" class="form-control @error('yookassa_secrtet_key') is-danger @enderror" id="yookassa_secrtet_key" name="yookassa_secrtet_key" value="{{ config('services.yookassa.secret_key') }}" autocomplete="off">
+                                           </div>
+                                                @error('yookassa_secrtet_key')
+                                                <p class="text-danger">{{ $errors->first('yookassa_secrtet_key') }}</p>
+                                                @enderror
+                                                </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="input-box">
+                                                <h6>Yookassa HTTP notifications</h6>
+                                                <div class="form-group">    
+                                                <input type="text" class="form-control @error('yookassa_http_uri') is-danger @enderror" id="yookassa_http_uri" name="yookassa_http_uri"
+                                                value="{{ config('services.yookassa.http_uri') }}" autocomplete="off">
+                                                </div>
+                                                @error('yookassa_http_uri')
+                                                <p class="text-danger">{{ $errors->first('yookassa_http_uri') }}</p>
+                                                @enderror
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                	</div>					
+				                        </div>
+                       <!-- Yookassa end  -->
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+// 1.4 Action add file /app/Http/Controllers/Admin/FinanceSettingController.php
+
+
+
+// Add Validation
+
+'enable-yookassa-subscription' => 'sometimes|required',
+'yookassa_shop_id' => 'required_if:enable-yookassa-subscription,on',
+'yookassa_secrtet_key' => 'required_if:enable-yookassa-subscription,on',
+'yookassa_secrtet_key' => 'required_if:enable-yookassa-subscription,on',
+
+// Writing fields to the configuration file
+
+$this->storeConfiguration('YOOKASSA_ENABLED', request('enable-yookassa'));
+$this->storeConfiguration('YOOKASSA_SUBSCRIPTION_ENABLED', request('enable-yookassa-subscription'));
+$this->storeConfiguration('YOOKASSA_SHOP_ID', request('yookassa_shop_id'));
+$this->storeConfiguration('YOOKASSA_SECRET_KEY', request('yookassa_secrtet_key'));
+$this->storeConfiguration('YOOKASSA_HTTP_URI', request('yookassa_http_uri'));
+
+// Switch the payment platform from the database. Table: payment_platforms
+
+if (request('enable-yookassa') == 'on') {
+$yookassa = PaymentPlatform::where('name', 'Yookassa')->first();
+$yookassa->enabled = 1;
+$yookassa->save();
+} else {
+$yookassa = PaymentPlatform::where('name', 'Yookassa')->first();
+$yookassa->enabled = 0;
+$yookassa->save();
+}
+
+// Switch the subscription to the payment platform from the database. Table: payment_platforms
+
+if (request('enable-yookassa-subscription') == 'on') {
+$yookassa = PaymentPlatform::where('name', 'Yookassa')->first();
+$yookassa->subscriptions_enabled = 1;
+$yookassa->save();
+
+} else {
+$yookassa = PaymentPlatform::where('name', 'Yookassa')->first();
+$yookassa->subscriptions_enabled = 0;
+$yookassa->save();
+}
+
+____________________________________________________________________________________________________________________________
+
+// 2. Action add cron job every minute in control panel
+
+wget -q -O - https://aiimage.ru/payments/callback > /dev/null 2>&1
+
+
+_________________________________________________________________________________________________________________________________
+
+// 2.1 Action Let's install the library from the website https://git.yoomoney.ru/projects/sdk/repos/yookassa-sdk-php/browse
+
+composer require yoomoney/yookassa-sdk-php
+
+____________________________________________________________________________________________________________________________
+
+// 2.2 Action Add Let's create a route for the callback in web.php
+
+use App\Http\Controllers\YookassaController;
+
+Route::match(['GET', 'POST'], '/payments/callback', [PaymentController::class, 'callback'])->name('payment.callback');
+
+____________________________________________________________________________________________________________________________
+
+// 2.3 Action Add file /Http/Middleware/VeryfyCsrfToken.php
+
+protected $except = [
+
+        'payments/callback',
+        '/payments/callback',
+   
+];
+
+// 2.4 Action Add File /Providers/AppServiceProvider.php
+
+public function register()
+    {
+        $this->app->bind(YookassaService::class, function($app) {
+        return new YookassaService();
+        });
+    }
+
+____________________________________________________________________________________________________________________________
+
+// 3 Action create file YookassaService.php and add the file to /App/Services/
+
+
+<?php
+
+namespace App\Services;
+
+use App\Traits\ConsumesExternalServiceTrait;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Spatie\Backup\Listeners\Listener;
+use App\Services\Statistics\UserService;
+use App\Events\PaymentReferrerBonus;
+use App\Events\PaymentProcessed;
+use App\Models\Payment;
+use App\Models\SubscriptionPlan;
+use App\Models\PrepaidPlan;
+use App\Models\Subscriber;
+use App\Models\User;
+use Carbon\Carbon;
+use YooKassa\Client;
+use YooKassa\Model\Notification\NotificationSucceeded;
+use YooKassa\Model\Notification\NotificationWaitingForCapture;
+use YooKassa\Model\NotificationEventType;
+use App\Services\Auth;
+use Illuminate\Support\Facades\Storage;
+
+class YookassaService 
+{
+   
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \YooKassa\Common\Exceptions\ApiException
+     * @throws \YooKassa\Common\Exceptions\BadApiRequestException
+     * @throws \YooKassa\Common\Exceptions\ExtensionNotFoundException
+     * @throws \YooKassa\Common\Exceptions\ForbiddenException
+     * @throws \YooKassa\Common\Exceptions\InternalServerError
+     * @throws \YooKassa\Common\Exceptions\NotFoundException
+     * @throws \YooKassa\Common\Exceptions\ResponseProcessingException
+     * @throws \YooKassa\Common\Exceptions\TooManyRequestsException
+     * @throws \YooKassa\Common\Exceptions\UnauthorizedException
+     */
+    // Функция оплаты тарифов monthly
+    public function handlePaymentSubscription(Request $request, SubscriptionPlan $id) {
+        $tax_value = (config('payment.payment_tax') > 0) ? $tax = $id->price * config('payment.payment_tax') / 100 : 0;
+        $total_value = $request->value;
+        
+        $sum = $id->price;
+        $plan_id = $id->id;
+        $plan_name = $id->plan_name;
+        $plan_words = $id->words;
+        $plan_images = $id->images;
+        $plan_characters = $id->characters;
+        $plan_minutes = $id->minutes;
+        
+        $client = new Client();
+        $client->setAuth(config('services.yookassa.shop_id'), config('services.yookassa.secret_key'));
+        
+        $payment = $client->createPayment([
+            	'amount' => [
+            	'value' => $total_value,
+            	'currency' => 'RUB',
+            ],
+            
+            
+            'confirmation' => [
+                'type' => 'redirect',
+                'return_url' => route('user.dashboard'),
+            ],
+            
+            'capture' => true, 
+            
+            
+            'items' => [
+               'description' => $plan_name         
+            ],
+        
+        
+        ], uniqid('', true)); 
+        
+        
+        // Получаем ссылку на оплату
+        $confirmationUrl = $payment->getConfirmation()->getConfirmationUrl();
+        
+        // Получаем платежный ключ
+        $pay_key = $payment->getid();
+        
+        
+        $pay_date = date("Y-m-d H:i:s"); // Получаем дату и время
+        $pay_status = "pending"; // Устанавливаем статус платежа ожидание
+        $user_id = auth()->user()->id;
+        
+        $type = 'monthly'; // тип подписки, колонка frequency
+        
+        // Сохраняем платеж в таблицу payments
+        $days = 30;
+        $record_payment = new Payment();
+        $record_payment->user_id = auth()->user()->id;
+        $record_payment->order_id = $pay_key; // платежный ключ
+        $record_payment->plan_id = $plan_id;
+        $record_payment->plan_name = $plan_name;
+        $record_payment->frequency = $type;
+        $record_payment->price = $sum;
+        $record_payment->currency = $id->currency;
+        $record_payment->gateway = 'Yookassa';
+        $record_payment->status = $pay_status;
+        $record_payment->words = $plan_words;
+        $record_payment->images = $plan_images;
+        $record_payment->characters = $plan_characters;
+        $record_payment->minutes = $plan_minutes;
+        $record_payment->valid_until = Carbon::now()->addDays($days);
+        $record_payment->save();
+        
+        
+        // Создаем подписчика
+        $subscription = Subscriber::create([
+            'active_until' => Carbon::now()->addDays($days),
+            'user_id' => auth()->user()->id,
+            'plan_id' => $id->id,
+            'status' => 'Not Active',
+            'gateway' => 'Yookassa',
+            'frequency' => $type,
+            'subscription_id' => $pay_key, // платежный ключ
+            'words' => $plan_words,
+            'images' => $plan_images,
+            'characters' => $plan_characters,
+            'minutes' => $plan_minutes,
+            'created_at' => now(),
+        ]);  
+        
+        // Сохраняем данные в таблицу users
+        $user = User::where('id', auth()->user()->id)->first();
+        $user->plan_type = $type;
+        $user->balance = $sum; // баланс
+        $user->available_words_prepaid = $user->available_words_prepaid + $plan_words;
+    	$user->available_images_prepaid = $user->available_images_prepaid + $plan_images;
+    	$user->available_chars_prepaid = $user->available_chars_prepaid + $plan_characters;
+    	$user->available_minutes_prepaid = $user->available_minutes_prepaid + $plan_minutes;
+    	$user->save();
+        
+        header('Location: '.$confirmationUrl);
+    }
+    
+    
+    // Функция оплаты тарифов prepaid и lifetime
+    public function handlePaymentPrePaid(Request $request, $id, $type) {
+        if ($request->type == 'lifetime') {
+            $id = SubscriptionPlan::where('id', $id)->first();
+            $type = 'lifetime';
+        } else {
+            $id = PrepaidPlan::where('id', $id)->first();
+            $type = 'prepaid';
+        }
+
+        $tax_value = (config('payment.payment_tax') > 0) ? $tax = $id->price * config('payment.payment_tax') / 100 : 0;
+        $total_value = $request->value;
+        
+        $sum = $id->price;
+        $plan_id = $id->id;
+        $plan_name = $id->plan_name;
+        $plan_words = $id->words;
+        $plan_images = $id->images;
+        $plan_characters = $id->characters;
+        $plan_minutes = $id->minutes;
+        
+        $client = new Client();
+        $client->setAuth(config('services.yookassa.shop_id'), config('services.yookassa.secret_key'));
+        
+        $payment = $client->createPayment([
+            	'amount' => [
+            	'value' => $total_value,
+            	'currency' => 'RUB',
+            ],
+            
+            
+            'confirmation' => [
+                'type' => 'redirect',
+                'return_url' => route('user.dashboard'),
+            ],
+            
+            'capture' => true, 
+            
+            
+            'items' => [
+               'description' => $plan_name       
+            ],
+        
+        
+        ], uniqid('', true)); 
+        
+        
+        // Получаем ссылку на оплату
+        $confirmationUrl = $payment->getConfirmation()->getConfirmationUrl();
+        
+        // Получаем платежный ключ
+        $pay_key = $payment->getid();
+        
+        $pay_date = date("Y-m-d H:i:s"); // Получаем дату и время
+        $pay_status = "pending"; // Устанавливаем статус платежа в режим ожидание
+        $user_id = auth()->user()->id;
+        
+        // Сохраняем платеж в таблицу payments
+        $record_payment = new Payment();
+        $record_payment->user_id = $user_id;
+        $record_payment->order_id = $pay_key; // платежный ключ
+        $record_payment->plan_id = $plan_id;
+        $record_payment->plan_name = $plan_name;
+        $record_payment->frequency = $type;
+        $record_payment->price = $sum;
+        $record_payment->currency = $id->currency;
+        $record_payment->gateway = 'Yookassa';
+        $record_payment->status = $pay_status;
+        $record_payment->words = $plan_words;
+        $record_payment->images = $plan_images;
+        $record_payment->characters = $plan_characters;
+        $record_payment->minutes = $plan_minutes;
+        $record_payment->save();
+        
+        // Создаем подписчика
+        $subscription = Subscriber::create([
+            'user_id' => auth()->user()->id,
+            'plan_id' => $plan_id,
+            'status' => 'Not Active',
+            'gateway' => 'Yookassa',
+            'frequency' => $type,
+            'subscription_id' => $pay_key, // платежный ключ
+            'words' => $plan_words,
+            'images' => $plan_images,
+            'characters' => $plan_characters,
+            'minutes' => $plan_minutes,
+            'created_at' => now(),
+        ]);  
+        
+        
+        // Сохраняем данные в таблицу users
+        $user = User::where('id', auth()->user()->id)->first();
+        
+        $user->plan_type = $type;
+        $user->balance = $sum; // баланс
+        
+        if ($type == 'lifetime') {
+        	$group = (auth()->user()->hasRole('admin'))? 'admin' : 'subscriber';
+        	$user->syncRoles($group);    
+        	$user->group = $group;	
+        	$user->total_words = $plan_words;
+        	$user->total_images = $plan_images;
+        	$user->total_chars = $plan_characters;
+        	$user->total_minutes = $plan_minutes;
+        	$user->available_words = $plan_words;
+        	$user->available_images = $plan_images;
+        	$user->available_chars = $plan_characters;
+        	$user->available_minutes = $plan_minutes;
+        } else {
+        	$user->available_words_prepaid = $user->available_words_prepaid + $plan_words;
+        	$user->available_images_prepaid = $user->available_images_prepaid + $plan_images;
+        	$user->available_chars_prepaid = $user->available_chars_prepaid + $plan_characters;
+        	$user->available_minutes_prepaid = $user->available_minutes_prepaid + $plan_minutes;
+        }
+        
+        $user->save();
+        
+        header('Location: '.$confirmationUrl);
+        
+    }
+}
+
+____________________________________________________________________________________________________________________________
+
+
+// Let's process the Yookassa response /app/Http/Controllers/YookassaController.php
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use YooKassa\Model\Notification\NotificationSucceeded;
+use YooKassa\Model\Notification\NotificationWaitingForCapture;
+use YooKassa\Model\NotificationEventType;
+use YooKassa\Model\PaymentStatus;
+use YooKassa\Client;
+use App\Models\Payment;
+use App\Models\Subscriber;
+use App\Models\User;
+
+class YookassaController extends Controller
+{
+   public function callback(Request $request) {
+        
+        $client = new Client();
+        $client->setAuth(config('services.yookassa.shop_id'), config('services.yookassa.secret_key'));
+        
+        
+        // Находим все платежи со статусом pending и сравниваем их с ответтом Yookassa. 
+        // Если статус изменился, то изменяем его в БД в таблице payments
+        $pending_payments = Payment::all()->where('status', 'pending');
+	    
+	    foreach($pending_payments as $pending_payment) {
+	        $yookassa_payment = $client->getPaymentInfo($pending_payment->order_id); // Получаем информацию о платеже
+	        $pay_check = $yookassa_payment->getstatus(); // Получаем статус оплаты
+	        
+	        
+	        if ($pay_check == 'waiting_for_capture' or $pay_check == 'succeeded') {
+	            $subscriber = Subscriber::where('subscription_id', $pending_payment->order_id)->first(); // получаем подписчика
+	            $subscriber->status = 'Active';
+	            
+	            // Работа с пользователем, таблица users
+	            $user_id = $subscriber->user_id;
+	            $plan_id = $subscriber->plan_id;
+	            $user = User::find($user_id);
+	            $user->plan_id = $plan_id;
+	            $user->save();
+	            
+	            $subscriber->save();
+                
+                $pending_payment->status = 'completed'; // Обновляем статус платежа
+                $pending_payment->save();
+	        }
+        }
+        
+        
+    }
+}
