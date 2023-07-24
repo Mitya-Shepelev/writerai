@@ -1,0 +1,753 @@
+<select id="user-country" name="country" data-placeholder="{{ __('Select User Country') }}">	
+										<option value="Afganistan">{{ __('Afghanistan') }}</option>
+										<option value="Albania">{{ __('Albania') }}</option>
+										<option value="Algeria">{{ __('Algeria') }}</option>
+										<option value="American Samoa">{{ __('American Samoa') }}</option>
+										<option value="Andorra">{{ __('Andorra') }}</option>
+										<option value="Angola">{{ __('Angola') }}</option>
+										<option value="Anguilla">{{ __('Anguilla') }}</option>
+										<option value="Antigua and Barbuda">{{ __('Antigua & Barbuda') }}</option>
+										<option value="Argentina">{{ __('Argentina') }}</option>
+										<option value="Armenia">{{ __('Armenia') }}</option>
+										<option value="Aruba">{{ __('Aruba') }}</option>
+										<option value="Australia">{{ __('Australia') }}</option>
+										<option value="Austria">{{ __('Austria') }}</option>
+										<option value="Azerbaijan">{{ __('Azerbaijan') }}</option>
+										<option value="Bahamas">{{ __('Bahamas') }}</option>
+										<option value="Bahrain">{{ __('Bahrain') }}</option>
+										<option value="Bangladesh">{{ __('Bangladesh') }}</option>
+										<option value="Barbados">{{ __('Barbados') }}</option>
+										<option value="Belarus">{{ __('Belarus') }}</option>
+										<option value="Belgium">{{ __('Belgium') }}</option>
+										<option value="Belize">{{ __('Belize') }}</option>
+										<option value="Benin">{{ __('Benin') }}</option>
+										<option value="Bermuda">{{ __('Bermuda') }}</option>
+										<option value="Bhutan">{{ __('Bhutan') }}</option>
+										<option value="Bolivia">{{ __('Bolivia') }}</option>
+										<option value="Bonaire">{{ __('Bonaire') }}</option>
+										<option value="Bosnia and Herzegovina">{{ __('Bosnia & Herzegovina') }}</option>
+										<option value="Botswana">{{ __('Botswana') }}</option>
+										<option value="Brazil" >{{ __('Brazil') }}</option>
+										<option value="British Indian Ocean Territory">{{ __('British Indian Ocean Ter') }}</option>
+										<option value="Brunei" >{{ __('Brunei') }}</option>
+										<option value="Bulgaria" >{{ __('Bulgaria') }}</option>
+										<option value="Burkina Faso">{{ __('Burkina Faso') }}</option>
+										<option value="Burundi" >{{ __('Burundi') }}</option>
+										<option value="Cambodia" >{{ __('Cambodia') }}</option>
+										<option value="Cameroon" >{{ __('Cameroon') }}</option>
+										<option value="Canada" >{{ __('Canada') }}</option>
+										<option value="Canary Islands">{{ __('Canary Islands') }}</option>
+										<option value="Cape Verde" >{{ __('Cape Verde') }}</option>
+										<option value="Cayman Islands">{{ __('Cayman Islands') }}</option>
+										<option value="Central African Republic">{{ __('Central African Republic') }}</option>
+										<option value="Chad">{{ __('Chad') }}</option>
+										<option value="Channel Islands">{{ __('Channel Islands') }}</option>
+										<option value="Chile">{{ __('Chile') }}</option>
+										<option value="China">{{ __('China') }}</option>
+										<option value="Christmas Island" >{{ __('Christmas Island') }}</option>
+										<option value="Cocos Island">{{ __('Cocos Island') }}</option>
+										<option value="Colombia" >{{ __('Colombia') }}</option>
+										<option value="Comoros">{{ __('Comoros') }}</option>
+										<option value="Congo" >{{ __('Congo') }}</option>
+										<option value="Cook Islands">{{ __('Cook Islands') }}</option>
+										<option value="Costa Rica">{{ __('Costa Rica') }}</option>
+										<option value="Cote Divoire">{{ __('Cote DIvoire') }}</option>
+										<option value="Croatia">{{ __('Croatia') }}</option>
+										<option value="Cuba">{{ __('Cuba') }}</option>
+										<option value="Curaco">{{ __('Curacao') }}</option>
+										<option value="Cyprus">{{ __('Cyprus') }}</option>
+										<option value="Czech Republic">{{ __('Czech Republic') }}</option>
+										<option value="Denmark">{{ __('Denmark') }}</option>
+										<option value="Djibouti" >{{ __('Djibouti') }}</option>
+										<option value="Dominica" >{{ __('Dominica') }}</option>
+										<option value="Dominican Republic">{{ __('Dominican Republic') }}</option>
+										<option value="East Timor">{{ __('East Timor') }}</option>
+										<option value="Ecuador">{{ __('Ecuador') }}</option>
+										<option value="Egypt">{{ __('Egypt') }}</option>
+										<option value="El Salvador" >{{ __('El Salvador') }}</option>
+										<option value="Equatorial Guinea">{{ __('Equatorial Guinea') }}</option>
+										<option value="Eritrea">{{ __('Eritrea') }}</option>
+										<option value="Estonia">{{ __('Estonia') }}</option>
+										<option value="Ethiopia">{{ __('Ethiopia') }}</option>
+										<option value="Falkland Islands">{{ __('Falkland Islands') }}</option>
+										<option value="Faroe Islands">{{ __('Faroe Islands') }}</option>
+										<option value="Fiji">{{ __('Fiji') }}</option>
+										<option value="Finland">{{ __('Finland') }}</option>
+										<option value="France">{{ __('France') }}</option>
+										<option value="French Guiana">{{ __('French Guiana') }}</option>
+										<option value="French Polynesia">{{ __('French Polynesia') }}</option>
+										<option value="French Southern Territory">{{ __('French Southern Ter') }}</option>
+										<option value="Gabon" >{{ __('Gabon') }}</option>
+										<option value="Gambia">{{ __('Gambia') }}</option>
+										<option value="Georgia">{{ __('Georgia') }}</option>
+										<option value="Germany">{{ __('Germany') }}</option>
+										<option value="Ghana" >{{ __('Ghana') }}</option>
+										<option value="Gibraltar" >{{ __('Gibraltar') }}</option>
+										<option value="Great Britain">{{ __('Great Britain') }}</option>
+										<option value="Greece">{{ __('Greece') }}</option>
+										<option value="Greenland">{{ __('Greenland') }}</option>
+										<option value="Grenada">{{ __('Grenada') }}</option>
+										<option value="Guadeloupe">{{ __('Guadeloupe') }}</option>
+										<option value="Guam">{{ __('Guam') }}</option>
+										<option value="Guatemala">{{ __('Guatemala') }}</option>
+										<option value="Guinea">{{ __('Guinea') }}</option>
+										<option value="Guyana">{{ __('Guyana') }}</option>
+										<option value="Haiti">{{ __('Haiti') }}</option>
+										<option value="Hawaii">{{ __('Hawaii') }}</option>
+										<option value="Honduras">{{ __('Honduras') }}</option>
+										<option value="Hong Kong">{{ __('Hong Kong') }}</option>
+										<option value="Hungary">{{ __('Hungary') }}</option>
+										<option value="Iceland">{{ __('Iceland') }}</option>
+										<option value="Indonesia">{{ __('Indonesia') }}</option>
+										<option value="India">{{ __('India') }}</option>
+										<option value="Iran">{{ __('Iran') }}</option>
+										<option value="Iraq">{{ __('Iraq') }}</option>
+										<option value="Ireland">{{ __('Ireland') }}</option>
+										<option value="Isle of Man">{{ __('Isle of Man') }}</option>
+										<option value="Israel">{{ __('Israel') }}</option>
+										<option value="Italy">{{ __('Italy') }}</option>
+										<option value="Jamaica">{{ __('Jamaica') }}</option>
+										<option value="Japan">{{ __('Japan') }}</option>
+										<option value="Jordan">{{ __('Jordan') }}</option>
+										<option value="Kazakhstan">{{ __('Kazakhstan') }}</option>
+										<option value="Kenya">{{ __('Kenya') }}</option>
+										<option value="Kiribati">{{ __('Kiribati') }}</option>
+										<option value="North Korea">{{ __('Korea North') }}</option>
+										<option value="South Korea">{{ __('Korea South') }}</option>
+										<option value="Kuwait">{{ __('Kuwait') }}</option>
+										<option value="Kyrgyzstan">{{ __('Kyrgyzstan') }}</option>
+										<option value="Laos">{{ __('Laos') }}</option>
+										<option value="Latvia">{{ __('Latvia') }}</option>
+										<option value="Lebanon">{{ __('Lebanon') }}</option>
+										<option value="Lesotho">{{ __('Lesotho') }}</option>
+										<option value="Liberia">{{ __('Liberia') }}</option>
+										<option value="Libya">{{ __('Libya') }}</option>
+										<option value="Liechtenstein">{{ __('Liechtenstein') }}</option>
+										<option value="Lithuania" >{{ __('Lithuania') }}</option>
+										<option value="Luxembourg">{{ __('Luxembourg') }}</option>
+										<option value="Macau">{{ __('Macau') }}</option>
+										<option value="Macedonia">{{ __('Macedonia') }}</option>
+										<option value="Madagascar">{{ __('Madagascar') }}</option>
+										<option value="Malaysia">{{ __('Malaysia') }}</option>
+										<option value="Malawi">{{ __('Malawi') }}</option>
+										<option value="Maldives">{{ __('Maldives') }}</option>
+										<option value="Mali">{{ __('Mali') }}</option>
+										<option value="Malta">{{ __('Malta') }}</option>
+										<option value="Marshall Islands">{{ __('Marshall Islands') }}</option>
+										<option value="Martinique">{{ __('Martinique') }}</option>
+										<option value="Mauritania">{{ __('Mauritania') }}</option>
+										<option value="Mauritius">{{ __('Mauritius') }}</option>
+										<option value="Mayotte">{{ __('Mayotte') }}</option>
+										<option value="Mexico">{{ __('Mexico') }}</option>
+										<option value="Midway Islands">{{ __('Midway Islands') }}</option>
+										<option value="Moldova">{{ __('Moldova') }}</option>
+										<option value="Monaco">{{ __('Monaco') }}</option>
+										<option value="Mongolia">{{ __('Mongolia') }}</option>
+										<option value="Montserrat">{{ __('Montserrat') }}</option>
+										<option value="Morocco">{{ __('Morocco') }}</option>
+										<option value="Mozambique">{{ __('Mozambique') }}</option>
+										<option value="Myanmar">{{ __('Myanmar') }}</option>
+										<option value="Nambia">{{ __('Nambia') }}</option>
+										<option value="Nauru">{{ __('Nauru') }}</option>
+										<option value="Nepal">{{ __('Nepal') }}</option>
+										<option value="Netherland Antilles">{{ __('Netherland Antilles') }}</option>
+										<option value="Netherlands">{{ __('Netherlands (Holland, Europe)') }}</option>
+										<option value="Nevis">{{ __('Nevis') }}</option>
+										<option value="New Caledonia">{{ __('New Caledonia') }}</option>
+										<option value="New Zealand">{{ __('New Zealand') }}</option>
+										<option value="Nicaragua">{{ __('Nicaragua') }}</option>
+										<option value="Niger">{{ __('Niger') }}</option>
+										<option value="Nigeria">{{ __('Nigeria') }}</option>
+										<option value="Niue">{{ __('Niue') }}</option>
+										<option value="Norfolk Island">{{ __('Norfolk Island') }}</option>
+										<option value="Norway">{{ __('Norway') }}</option>
+										<option value="Oman">{{ __('Oman') }}</option>
+										<option value="Pakistan" >{{ __('Pakistan') }}</option>
+										<option value="Palau Island">{{ __('Palau Island') }}</option>
+										<option value="Palestine">{{ __('Palestine') }}</option>
+										<option value="Panama">{{ __('Panama') }}</option>
+										<option value="Papua New Guinea">{{ __('Papua New Guinea') }}</option>
+										<option value="Paraguay">{{ __('Paraguay') }}</option>
+										<option value="Peru">{{ __('Peru') }}</option>
+										<option value="Phillipines">{{ __('Philippines') }}</option>
+										<option value="Pitcairn Island">{{ __('Pitcairn Island') }}</option>
+										<option value="Poland">{{ __('Poland') }}</option>
+										<option value="Portugal">{{ __('Portugal') }}</option>
+										<option value="Puerto Rico">{{ __('Puerto Rico') }}</option>
+										<option value="Qatar">{{ __('Qatar') }}</option>
+										<option value="Republic of Montenegro">{{ __('Republic of Montenegro') }}</option>
+										<option value="Republic of Serbia">{{ __('Republic of Serbia') }}</option>
+										<option value="Reunion">{{ __('Reunion') }}</option>
+										<option value="Romania">{{ __('Romania') }}</option>
+										<option value="Russia">{{ __('Russia') }}</option>
+										<option value="Rwanda">{{ __('Rwanda') }}</option>
+										<option value="St Barthelemy">{{ __('St Barthelemy') }}</option>
+										<option value="St Eustatius">{{ __('St Eustatius') }}</option>
+										<option value="St Helena">{{ __('St Helena') }}</option>
+										<option value="St Kitts-Nevis">{{ __('St Kitts-Nevis') }}</option>
+										<option value="St Lucia" >{{ __('St Lucia') }}</option>
+										<option value="St Maarten">{{ __('St Maarten') }}</option>
+										<option value="St Pierre and Miquelon">{{ __('St Pierre & Miquelon') }}</option>
+										<option value="St Vincent and Grenadines">{{ __('St Vincent & Grenadines') }}</option>
+										<option value="Saipan" >{{ __('Saipan') }}</option>
+										<option value="Samoa">{{ __('Samoa') }}</option>
+										<option value="American Samoa">{{ __('Samoa American') }}</option>
+										<option value="San Marino">{{ __('San Marino') }}</option>
+										<option value="Sao Tome and Principe">{{ __('Sao Tome & Principe') }}</option>
+										<option value="Saudi Arabia">{{ __('Saudi Arabia') }}</option>
+										<option value="Senegal">{{ __('Senegal') }}</option>
+										<option value="Seychelles">{{ __('Seychelles') }}</option>
+										<option value="Sierra Leone">{{ __('Sierra Leone') }}</option>
+										<option value="Singapore">{{ __('Singapore') }}</option>
+										<option value="Slovakia">{{ __('Slovakia') }}</option>
+										<option value="Slovenia">{{ __('Slovenia') }}</option>
+										<option value="Solomon Islands">{{ __('Solomon Islands') }}</option>
+										<option value="Somalia">{{ __('Somalia') }}</option>
+										<option value="South Africa">{{ __('South Africa') }}</option>
+										<option value="Spain">{{ __('Spain') }}</option>
+										<option value="Sri Lanka">{{ __('Sri Lanka') }}</option>
+										<option value="Sudan">{{ __('Sudan') }}</option>
+										<option value="Suriname">{{ __('Suriname') }}</option>
+										<option value="Swaziland">{{ __('Swaziland') }}</option>
+										<option value="Sweden">{{ __('Sweden') }}</option>
+										<option value="Switzerland">{{ __('Switzerland') }}</option>
+										<option value="Syria">{{ __('Syria') }}</option>
+										<option value="Tahiti">{{ __('Tahiti') }}</option>
+										<option value="Taiwan">{{ __('Taiwan') }}</option>
+										<option value="Tajikistan">{{ __('Tajikistan') }}</option>
+										<option value="Tanzania">{{ __('Tanzania') }}</option>
+										<option value="Thailand">{{ __('Thailand') }}</option>
+										<option value="Togo">{{ __('Togo') }}</option>
+										<option value="Tokelau">{{ __('Tokelau') }}</option>
+										<option value="Tonga">{{ __('Tonga') }}</option>
+										<option value="Trinidad and Tobago">{{ __('Trinidad and Tobago') }}</option>
+										<option value="Tunisia">{{ __('Tunisia') }}</option>
+										<option value="Turkey">{{ __('Turkey') }}</option>
+										<option value="Turkmenistan">{{ __('Turkmenistan') }}</option>
+										<option value="Turks and Caicos Islands">{{ __('Turks and Caicos Islands') }}</option>
+										<option value="Tuvalu">{{ __('Tuvalu') }}</option>
+										<option value="Uganda">{{ __('Uganda') }}</option>
+										<option value="United Kingdom">{{ __('United Kingdom') }}</option>
+										<option value="Ukraine">{{ __('Ukraine') }}</option>
+										<option value="United Arab Erimates">{{ __('United Arab Emirates') }}</option>
+										<option value="United States">{{ __('United States') }}</option>
+										<option value="Uraguay">{{ __('Uruguay') }}</option>
+										<option value="Uzbekistan">{{ __('Uzbekistan') }}</option>
+										<option value="Vanuatu">{{ __('Vanuatu') }}</option>
+										<option value="Vatican City State">{{ __('Vatican City State') }}</option>
+										<option value="Venezuela">{{ __('Venezuela') }}</option>
+										<option value="Vietnam">{{ __('Vietnam') }}</option>
+										<option value="Virgin Islands (Britain)">{{ __('Virgin Islands (Brit)') }}</option>
+										<option value="Virgin Islands (USA)">{{ __('Virgin Islands (USA)') }}</option>
+										<option value="Wake Island">{{ __('Wake Island') }}</option>
+										<option value="Wallis and Futana Islands">{{ __('Wallis & Futana Is') }}</option>
+										<option value="Yemen">{{ __('Yemen') }}</option>
+										<option value="Zaire">{{ __('Zaire') }}</option>
+										<option value="Zambia">{{ __('Zambia') }}</option>
+										<option value="Zimbabwe">{{ __('Zimbabwe') }}</option>										
+									</select>
+
+
+  // Lan
+
+"Afghanistan": "Afghanistan",
+"Albania": "Albania",
+"Algeria": "Algeria",
+"American Samoa": "American Samoa",
+"Andorra": "Andorra",
+"Angola": "Angola",
+"Anguilla": "Anguilla",
+"Antigua & Barbuda": "Antigua & Barbuda",
+"Argentina": "Argentina",
+"Armenia": "Armenia",
+"Aruba": "Aruba",
+"Australia": "Australia",
+"Austria": "Austria",
+"Azerbaijan": "Azerbaijan",
+"Bahamas": "Bahamas",
+"Bahrain": "Bahrain",
+"Bangladesh": "Bangladesh",
+"Barbados": "Barbados",
+"Belarus": "Belarus",
+"Belgium": "Belgium",
+"Belize": "Belize",
+"Benin": "Benin",
+"Bermuda": "Bermuda",
+"Bhutan": "Bhutan",
+"Bolivia": "Bolivia",
+"Bonaire": "Bonaire",
+"Bosnia & Herzegovina": "Bosnia & Herzegovina",
+"Botswana": "Botswana",
+"Brazil": "Brazil",
+"British Indian Ocean Ter": "British Indian Ocean Ter",
+"Brunei": "Brunei",
+"Bulgaria": "Bulgaria",
+"Burkina Faso": "Burkina Faso",
+"Burundi": "Burundi",
+"Cambodia": "Cambodia",
+"Cameroon": "Cameroon",
+"Canada": "Canada",
+"Canary Islands": "Canary Islands",
+"Cape Verde": "Cape Verde",
+"Cayman Islands": "Cayman Islands",
+"Central African Republic": "Central African Republic",
+"Chad": "Chad",
+"Channel Islands": "Channel Islands",
+"Chile": "Chile",
+"China": "China",
+"Christmas Island": "Christmas Island",
+"Cocos Island": "Cocos Island",
+"Colombia": "Colombia",
+"Comoros": "Comoros",
+"Congo": "Congo",
+"Cook Islands": "Cook Islands",
+"Costa Rica": "Costa Rica",
+"Cote DIvoire": "Cote DIvoire",
+"Croatia": "Croatia",
+"Cuba": "Cuba",
+"Curacao": "Curacao",
+"Cyprus": "Cyprus",
+"Czech Republic": "Czech Republic",
+"Denmark": "Denmark",
+"Djibouti": "Djibouti",
+"Dominica": "Dominica",
+"Dominican Republic": "Dominican Republic",
+"East Timor": "East Timor",
+"Ecuador": "Ecuador",
+"Egypt": "Egypt",
+"El Salvador": "El Salvador",
+"Equatorial Guinea": "Equatorial Guinea",
+"Eritrea": "Eritrea",
+"Estonia": "Estonia",
+"Ethiopia": "Ethiopia",
+"Falkland Islands": "Falkland Islands",
+"Faroe Islands": "Faroe Islands",
+"Fiji": "Fiji",
+"Finland": "Finland",
+"France": "France",
+"French Guiana": "French Guiana",
+"French Polynesia": "French Polynesia",
+"French Southern Ter": "French Southern Ter",
+"Gabon": "Gabon",
+"Gambia": "Gambia",
+"Georgia": "Georgia",
+"Germany": "Germany",
+"Ghana": "Ghana",
+"Gibraltar": "Gibraltar",
+"Great Britain": "Great Britain",
+"Greece": "Greece",
+"Greenland": "Greenland",
+"Grenada": "Grenada",
+"Guadeloupe": "Guadeloupe",
+"Guam": "Guam",
+"Guatemala": "Guatemala",
+"Guinea": "Guinea",
+"Guyana": "Guyana",
+"Haiti": "Haiti",
+"Hawaii": "Hawaii",
+"Honduras": "Honduras",
+"Hong Kong": "Hong Kong",
+"Hungary": "Hungary",
+"Iceland": "Iceland",
+"Indonesia": "Indonesia",
+"India": "India",
+"Iran": "Iran",
+"Iraq": "Iraq",
+"Ireland": "Ireland",
+"Isle of Man": "Isle of Man",
+"Israel": "Israel",
+"Italy": "Italy",
+"Jamaica": "Jamaica",
+"Japan": "Japan",
+"Jordan": "Jordan",
+"Kazakhstan": "Kazakhstan",
+"Kenya": "Kenya",
+"Kiribati": "Kiribati",
+"Korea North": "Korea North",
+"Korea South": "Korea South",
+"Kuwait": "Kuwait",
+"Kyrgyzstan": "Kyrgyzstan",
+"Laos": "Laos",
+"Latvia": "Latvia",
+"Lebanon": "Lebanon",
+"Lesotho": "Lesotho",
+"Liberia": "Liberia",
+"Libya": "Libya",
+"Liechtenstein": "Liechtenstein",
+"Lithuania": "Lithuania",
+"Luxembourg": "Luxembourg",
+"Macau": "Macau",
+"Macedonia": "Macedonia",
+"Madagascar": "Madagascar",
+"Malaysia": "Malaysia",
+"Malawi": "Malawi",
+"Maldives": "Maldives",
+"Mali": "Mali",
+"Malta": "Malta",
+"Marshall Islands": "Marshall Islands",
+"Martinique": "Martinique",
+"Mauritania": "Mauritania",
+"Mauritius": "Mauritius",
+"Mayotte": "Mayotte",
+"Mexico": "Mexico",
+"Midway Islands": "Midway Islands",
+"Moldova": "Moldova",
+"Monaco": "Monaco",
+"Mongolia": "Mongolia",
+"Montserrat": "Montserrat",
+"Morocco": "Morocco",
+"Mozambique": "Mozambique",
+"Myanmar": "Myanmar",
+"Nambia": "Nambia",
+"Nauru": "Nauru",
+"Nepal": "Nepal",
+"Netherland Antilles": "Netherland Antilles",
+"Netherlands (Holland, Europe": "Netherlands (Holland, Europe",
+"Nevis": "Nevis",
+"New Caledonia": "",
+"New Zealand": "New Zealand",
+"Nicaragua": "Nicaragua",
+"Niger": "Niger",
+"Nigeria": "Nigeria",
+"Niue": "Niue",
+"Norfolk Island": "Norfolk Island",
+"Norway": "Norway",
+"Oman": "Oman",
+"Pakistan": "Pakistan",
+"Palau Island": "Palau Island",
+"Palestine": "Palestine",
+"Panama": "Panama",
+"Papua New Guinea": "Papua New Guinea",
+"Paraguay": "Paraguay",
+"Peru": "Peru",
+"Philippines": "Philippines",
+"Pitcairn Island": "Pitcairn Island",
+"Poland": "Poland",
+"Portugal": "Portugal",
+"Puerto Rico": "Puerto Rico",
+"Qatar": "Qatar",
+"Republic of Montenegro": "Republic of Montenegro",
+"Republic of Serbia": "Republic of Serbia",
+"Reunion": "Reunion",
+"Romania": "Romania",
+"Russia": "Russia",
+"Rwanda": Rwanda"",
+"St Barthelemy": "St Barthelemy",
+"St Eustatius": "St Eustatius",
+"St Helena": "St Helena",
+"St Kitts-Nevis": "St Kitts-Nevis",
+"St Lucia": "St Lucia",
+"St Maarten": "St Maarten",
+"St Pierre & Miquelon": "St Pierre & Miquelon",
+"St Vincent & Grenadines": "St Vincent & Grenadines",
+"Saipan": "Saipan",
+"Samoa": "Samoa",
+"Samoa American": "Samoa American",
+"San Marino": "San Marino",
+"Sao Tome & Principe": "Sao Tome & Principe",
+"Saudi Arabia": "Saudi Arabia",
+"Senegal": "Senegal",
+"Seychelles": "Seychelles",
+"Sierra Leone": "Sierra Leone",
+"Singapore": "Singapore",
+"Slovakia": "Slovakia",
+"Slovenia": "Slovenia",
+"Solomon Islands": "Solomon Islands",
+"Somalia": "Somalia",
+"South Africa": "South Africa",
+"Spain": "Spain",
+"Sri Lanka": "Sri Lanka",
+"Sudan": "Sudan",
+"Suriname": "Suriname",
+"Swaziland": "Swaziland",
+"Sweden": "Sweden",
+"Switzerland": "Switzerland",
+"Syria": "Syria",
+"Tahiti": "Tahiti",
+"Taiwan": "Taiwan",
+"Tajikistan": "Tajikistan",
+"Tanzania": "Tanzania",
+"Thailand": "Thailand",
+"Togo": "Togo",
+"Tokelau": "Tokelau",
+"Tonga": "Tonga",
+"Trinidad and Tobago": "Trinidad and Tobago",
+"Tunisia": "Tunisia",
+"Turkey": "Turkey",
+"Turkmenistan": "Turkmenistan",
+"Turks and Caicos Islands": "Turks and Caicos Islands",
+"Tuvalu": "Tuvalu",
+"Uganda": "Uganda",
+"United Kingdom": "United Kingdom",
+"Ukraine": "Ukraine",
+"United Arab Emirates": "United Arab Emirates",
+"United States": "United States",
+"Uruguay": "Uruguay",
+"Uzbekistan": "Uzbekistan",
+"Vanuatu": "Vanuatu",
+"Vatican City State": "Vatican City State",
+"Venezuela": "Venezuela",
+"Vietnam": "Vietnam",
+"Virgin Islands (Brit)": "Virgin Islands (Brit)",
+"Virgin Islands (USA)": "Virgin Islands (USA)",
+"Wake Island": "Wake Island",
+"Wallis & Futana Is": "Wallis & Futana Is",
+"Yemen": "Yemen",
+"Zaire": "Zaire",
+"Zambia": "Zambia",
+"Zimbabwe": "Zimbabwe",
+
+
+
+
+
+
+"Afghanistan": "Афганистан",
+"Albania": "Албания",
+"Algeria": "Алжир",
+"American Samoa": "Американское Самоа",
+"Andorra": "Андорра",
+"Angola": "Ангола",
+"Anguilla": "Ангилья",
+"Antigua & Barbuda": "Антигуа и Барбуда",
+"Argentina": "Аргентина",
+"Armenia": "Армения",
+"Aruba": "Аруба",
+"Australia": "Австралия",
+"Austria": "Австрия",
+"Azerbaijan": "Азербайджан",
+"Bahamas": "Багамы",
+"Bahrain": "Бахрейн",
+"Bangladesh": "Бангладеш",
+"Barbados": "Барбадос",
+"Belarus": "Беларусь",
+"Belgium": "Бельгия",
+"Belize": "Белиз",
+"Benin": "Бенин",
+"Bermuda": "Бермуды",
+"Bhutan": "Бутан",
+"Bolivia": "Боливия",
+"Bonaire": "Бонайре",
+"Bosnia & Herzegovina": "Босния и Герцеговина",
+"Botswana": "Ботсвана",
+"Brazil": "Бразилия",
+"British Indian Ocean Ter": "Британская тер Индийского океана",
+"Brunei": "Бруней",
+"Bulgaria": "Болгария",
+"Burkina Faso": "Буркина Фасо",
+"Burundi": "Бурунди",
+"Cambodia": "Камбоджа",
+"Cameroon": "Камерун",
+"Canada": "Канада",
+"Canary Islands": "Канарские острова",
+"Cape Verde": "Кабо Верде",
+"Cayman Islands": "Каймановы острова",
+"Central African Republic": "Центрально-Африканская Республика",
+"Chad": "Чад",
+"Channel Islands": "Нормандские острова",
+"Chile": "Чили",
+"China": "Китай",
+"Christmas Island": "Остров Рождества",
+"Cocos Island": "Кокосовый остров",
+"Colombia": "Колумбия",
+"Comoros": "Коморы",
+"Congo": "Конго",
+"Cook Islands": "Острова Кука",
+"Costa Rica": "Коста Рика",
+"Cote DIvoire": "Берег Слоновой Кости",
+"Croatia": "Хорватия",
+"Cuba": "Куба",
+"Curacao": "Кюрасао",
+"Cyprus": "Кипр",
+"Czech Republic": "Чешская Республика",
+"Denmark": "Дания",
+"Djibouti": "Джибути",
+"Dominica": "Доминика",
+"Dominican Republic": "Доминиканская Республика",
+"East Timor": "Восточный Тимор",
+"Ecuador": "Эквадор",
+"Egypt": "Египет",
+"El Salvador": "Сальвадор",
+"Equatorial Guinea": "Экваториальная Гвинея",
+"Eritrea": "Эритрея",
+"Estonia": "Эстония",
+"Ethiopia": "Эфиопия",
+"Falkland Islands": "Фолклендские острова",
+"Faroe Islands": "Фарерские острова",
+"Fiji": "Фиджи",
+"Finland": "Финляндия",
+"France": "Франция",
+"French Guiana": "Французская Гвиана",
+"French Polynesia": "Французская Полинезия",
+"French Southern Ter": "Французский Южный Тер",
+"Gabon": "Габон",
+"Gambia": "Гамбия",
+"Georgia": "Грузия",
+"Germany": "Германия",
+"Ghana": "Гана",
+"Gibraltar": "Гибралтар",
+"Great Britain": "Великобритания",
+"Greece": "Греция",
+"Greenland": "Гренландия",
+"Grenada": "Гренада",
+"Guadeloupe": "Гваделупа",
+"Guam": "Гуам",
+"Guatemala": "Гватемала",
+"Guinea": "Гвинея",
+"Guyana": "Гайана",
+"Haiti": "Гаити",
+"Hawaii": "Гавайи",
+"Honduras": "Гондурас",
+"Hong Kong": "Гонконг",
+"Hungary": "Венгрия",
+"Iceland": "Исландия",
+"Indonesia": "Индонезия",
+"India": "Индия",
+"Iran": "Иран",
+"Iraq": "Ирак",
+"Ireland": "Ирландия",
+"Isle of Man": "Остров Мэн",
+"Israel": "Израиль",
+"Italy": "Италия",
+"Jamaica": "Ямайка",
+"Japan": "Япония",
+"Jordan": "Иордания",
+"Kazakhstan": "Казахстан",
+"Kenya": "Кения",
+"Kiribati": "Кирибати",
+"Korea North": "Северная Корея",
+"Korea South": "Южная Корея",
+"Kuwait": "Кувейт",
+"Kyrgyzstan": "Кыргызстан",
+"Laos": "Лаос",
+"Latvia": "Латвия",
+"Lebanon": "Ливан",
+"Lesotho": "Лесото",
+"Liberia": "Либерия",
+"Libya": "Ливия",
+"Liechtenstein": "Лихтенштейн",
+"Lithuania": "Литва",
+"Luxembourg": "Люксембург",
+"Macau": "Макао",
+"Macedonia": "Македония",
+"Madagascar": "Мадагаскар",
+"Malaysia": "Малайзия",
+"Malawi": "Малави",
+"Maldives": "Мальдивы",
+"Mali": "Мали",
+"Malta": "Мальта",
+"Marshall Islands": "Маршалловы острова",
+"Martinique": "Мартиника",
+"Mauritania": "Mauritania",
+"Mauritius": "Mauritius",
+"Mayotte": "Mayotte",
+"Mexico": "Mexico",
+"Midway Islands": "Midway Islands",
+"Moldova": "Moldova",
+"Monaco": "Monaco",
+"Mongolia": "Mongolia",
+"Montserrat": "Montserrat",
+"Morocco": "Morocco",
+"Mozambique": "Mozambique",
+"Myanmar": "Myanmar",
+"Nambia": "Nambia",
+"Nauru": "Nauru",
+"Nepal": "Nepal",
+"Netherland Antilles": "Netherland Antilles",
+"Netherlands (Holland, Europe": "Netherlands (Holland, Europe",
+"Nevis": "Nevis",
+"New Caledonia": "",
+"New Zealand": "New Zealand",
+"Nicaragua": "Nicaragua",
+"Niger": "Niger",
+"Nigeria": "Nigeria",
+"Niue": "Niue",
+"Norfolk Island": "Norfolk Island",
+"Norway": "Norway",
+"Oman": "Oman",
+"Pakistan": "Pakistan",
+"Palau Island": "Palau Island",
+"Palestine": "Palestine",
+"Panama": "Panama",
+"Papua New Guinea": "Papua New Guinea",
+"Paraguay": "Paraguay",
+"Peru": "Peru",
+"Philippines": "Philippines",
+"Pitcairn Island": "Pitcairn Island",
+"Poland": "Poland",
+"Portugal": "Portugal",
+"Puerto Rico": "Puerto Rico",
+"Qatar": "Qatar",
+"Republic of Montenegro": "Republic of Montenegro",
+"Republic of Serbia": "Republic of Serbia",
+"Reunion": "Reunion",
+"Romania": "Romania",
+"Russia": "Russia",
+"Rwanda": Rwanda"",
+"St Barthelemy": "St Barthelemy",
+"St Eustatius": "St Eustatius",
+"St Helena": "St Helena",
+"St Kitts-Nevis": "St Kitts-Nevis",
+"St Lucia": "St Lucia",
+"St Maarten": "St Maarten",
+"St Pierre & Miquelon": "St Pierre & Miquelon",
+"St Vincent & Grenadines": "St Vincent & Grenadines",
+"Saipan": "Saipan",
+"Samoa": "Samoa",
+"Samoa American": "Samoa American",
+"San Marino": "San Marino",
+"Sao Tome & Principe": "Sao Tome & Principe",
+"Saudi Arabia": "Saudi Arabia",
+"Senegal": "Senegal",
+"Seychelles": "Seychelles",
+"Sierra Leone": "Sierra Leone",
+"Singapore": "Singapore",
+"Slovakia": "Slovakia",
+"Slovenia": "Slovenia",
+"Solomon Islands": "Solomon Islands",
+"Somalia": "Somalia",
+"South Africa": "South Africa",
+"Spain": "Spain",
+"Sri Lanka": "Sri Lanka",
+"Sudan": "Sudan",
+"Suriname": "Suriname",
+"Swaziland": "Swaziland",
+"Sweden": "Sweden",
+"Switzerland": "Switzerland",
+"Syria": "Syria",
+"Tahiti": "Tahiti",
+"Taiwan": "Taiwan",
+"Tajikistan": "Tajikistan",
+"Tanzania": "Tanzania",
+"Thailand": "Thailand",
+"Togo": "Togo",
+"Tokelau": "Tokelau",
+"Tonga": "Tonga",
+"Trinidad and Tobago": "Trinidad and Tobago",
+"Tunisia": "Tunisia",
+"Turkey": "Turkey",
+"Turkmenistan": "Turkmenistan",
+"Turks and Caicos Islands": "Turks and Caicos Islands",
+"Tuvalu": "Tuvalu",
+"Uganda": "Uganda",
+"United Kingdom": "United Kingdom",
+"Ukraine": "Ukraine",
+"United Arab Emirates": "United Arab Emirates",
+"United States": "United States",
+"Uruguay": "Uruguay",
+"Uzbekistan": "Uzbekistan",
+"Vanuatu": "Vanuatu",
+"Vatican City State": "Vatican City State",
+"Venezuela": "Venezuela",
+"Vietnam": "Vietnam",
+"Virgin Islands (Brit)": "Virgin Islands (Brit)",
+"Virgin Islands (USA)": "Virgin Islands (USA)",
+"Wake Island": "Wake Island",
+"Wallis & Futana Is": "Wallis & Futana Is",
+"Yemen": "Yemen",
+"Zaire": "Zaire",
+"Zambia": "Zambia",
+"Zimbabwe": "Zimbabwe",
+
+
+  
