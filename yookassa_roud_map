@@ -159,7 +159,7 @@ ________________________________________________________________________________
 
 // 2. Action add cron job every minute in control panel
 
-wget -q -O - https://aiimage.ru/payments/callback > /dev/null 2>&1
+wget -q -O - https://my-site.com/payments/callback > /dev/null 2>&1
 
 
 _________________________________________________________________________________________________________________________________
